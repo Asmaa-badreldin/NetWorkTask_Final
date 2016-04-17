@@ -35,7 +35,6 @@
 		D19246991CC31B2D008BC709 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D192468E1CC31B2D008BC709 /* AFURLRequestSerialization.m */; };
 		D192469A1CC31B2D008BC709 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D19246901CC31B2D008BC709 /* AFURLResponseSerialization.m */; };
 		D192469B1CC31B2D008BC709 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D19246921CC31B2D008BC709 /* AFURLSessionManager.m */; };
-		D192469D1CC31B47008BC709 /* jets.png in Resources */ = {isa = PBXBuildFile; fileRef = D192469C1CC31B47008BC709 /* jets.png */; };
 		D19246B51CC31B77008BC709 /* NetWorkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D19246A01CC31B76008BC709 /* NetWorkHandler.m */; };
 		D19246B61CC31B77008BC709 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D19246A21CC31B76008BC709 /* NetWorkManager.m */; };
 		D19246B71CC31B77008BC709 /* SpeakersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19246A41CC31B77008BC709 /* SpeakersTableView.m */; };
@@ -107,7 +106,6 @@
 		D19246901CC31B2D008BC709 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		D19246911CC31B2D008BC709 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		D19246921CC31B2D008BC709 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		D192469C1CC31B47008BC709 /* jets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jets.png; sourceTree = "<group>"; };
 		D192469E1CC31B76008BC709 /* NetWorkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkDelegate.h; sourceTree = "<group>"; };
 		D192469F1CC31B76008BC709 /* NetWorkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkHandler.h; sourceTree = "<group>"; };
 		D19246A01CC31B76008BC709 /* NetWorkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkHandler.m; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				D19246A31CC31B76008BC709 /* SpeakersTableView.h */,
 				D19246A41CC31B77008BC709 /* SpeakersTableView.m */,
 				D19246A51CC31B77008BC709 /* UIKit+AFNetworking */,
-				D192469C1CC31B47008BC709 /* jets.png */,
 				D192467F1CC31B2D008BC709 /* AFNetworking */,
 				D192466F1CC31B13008BC709 /* beans */,
 				D19246401CC31918008BC709 /* Final_NetworkTask */,
@@ -383,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19246531CC31918008BC709 /* Images.xcassets in Resources */,
-				D192469D1CC31B47008BC709 /* jets.png in Resources */,
 				D19246451CC31918008BC709 /* InfoPlist.strings in Resources */,
 				D192464E1CC31918008BC709 /* Main.storyboard in Resources */,
 			);
