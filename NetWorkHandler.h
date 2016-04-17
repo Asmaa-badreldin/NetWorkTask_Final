@@ -25,5 +25,5 @@
 -(NSDictionary *) getExhibitorWithEmail:(NSString *)email;
 @property NSMutableArray *exhibitor;
 
-
+@property NSString *test;
 @end
