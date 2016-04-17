@@ -35,8 +35,8 @@ UIActivityIndicatorView *activity;
     
     
     // 1- load getSpeakerMethod
-     NetWorkHandler *net=[NetWorkHandler new];
-    mydic = [net getSpeakersWithEmail:@"eng.medhat.cs.h@gmail.com"];
+    // NetWorkHandler *net=[NetWorkHandler new];
+    //mydic = [net getSpeakersWithEmail:@"eng.medhat.cs.h@gmail.com"];
   
    /*
     // 2- load getProfile Method
@@ -54,8 +54,8 @@ UIActivityIndicatorView *activity;
     */
     
    
-   // NetWorkHandler *net=[NetWorkHandler new];
-    //mydic = [net getExhibitor:@"eng.medhat.cs.h@gmail.com"];
+    NetWorkHandler *net=[NetWorkHandler new];
+    mydic = [net getExhibitor:@"eng.medhat.cs.h@gmail.com"];
     
     
 }
