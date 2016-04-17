@@ -22,7 +22,7 @@
 
 -(NSDictionary *)getSessionsWithEmail:(NSString *)email;
 
--(NSDictionary *) getExhibitor;
+-(NSDictionary *) getExhibitorWithEmail:(NSString *)email;
 @property NSMutableArray *exhibitor;
 
 

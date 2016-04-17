@@ -242,9 +242,9 @@
 
 
 
--(NSDictionary *)getExhibitor
+-(NSDictionary *)getExhibitorWithEmail:(NSString *)email
 {
-    NSString *myexhibitor=@"http://www.mobiledeveloperweekend.net/service/getExhibitors?userName=eng.medhat.cs.h@gmail.com";
+    NSString *myexhibitor=[NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/getExhibitors?userName=%@",email];
     mydic=[NSDictionary new];
     NSURL *myurl=[NSURL URLWithString:myexhibitor];
     NSURLRequest *myrequest=[NSURLRequest requestWithURL:myurl];

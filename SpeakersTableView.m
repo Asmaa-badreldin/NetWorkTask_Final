@@ -33,11 +33,13 @@ UIActivityIndicatorView *activity;
 {
     [super viewDidLoad];
     
-    
+    /*
     // 1- load getSpeakerMethod
      NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSpeakersWithEmail:@"eng.medhat.cs.h@gmail.com"];
-  
+    */
+    
+    
    /*
     // 2- load getProfile Method
     NetWorkHandler *net=[NetWorkHandler new];
@@ -53,11 +55,11 @@ UIActivityIndicatorView *activity;
     mydic = [net getSessionsWithEmail:@"eng.medhat.cs.h@gmail.com"];
     */
     
+    // 4- load getExhibtors Method
+    NetWorkHandler *net=[NetWorkHandler new];
+    mydic = [net getExhibitorWithEmail:@"eng.medhat.cs.h@gmail.com"];
    
-   // NetWorkHandler *net=[NetWorkHandler new];
-    //mydic = [net getExhibitor:@"eng.medhat.cs.h@gmail.com"];
-    
-    
+  
 }
 
 
