@@ -10,6 +10,7 @@
 #import "NetWorkHandler.h"
 #import "JETSSpeaker.h"
 #import "JETSProfile.h"
+#import "JETSExhibitor.h"
 
 NSDictionary *mydic;
 UIActivityIndicatorView *activity;
@@ -34,11 +35,9 @@ UIActivityIndicatorView *activity;
     
     
     // 1- load getSpeakerMethod
-    NetWorkHandler *net=[NetWorkHandler new];
+     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSpeakersWithEmail:@"eng.medhat.cs.h@gmail.com"];
-    
-    
-    
+  
    /*
     // 2- load getProfile Method
     NetWorkHandler *net=[NetWorkHandler new];
@@ -53,6 +52,10 @@ UIActivityIndicatorView *activity;
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSessionsWithEmail:@"eng.medhat.cs.h@gmail.com"];
     */
+    
+   
+   // NetWorkHandler *net=[NetWorkHandler new];
+    //mydic = [net getExhibitor:@"eng.medhat.cs.h@gmail.com"];
     
     
 }

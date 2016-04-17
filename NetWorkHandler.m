@@ -12,6 +12,7 @@
 #import "JETSProfile.h"
 #import "JETSAgenda.h"
 #import "JETSSession.h"
+#import "JETSExhibitor.h"
 
 @implementation NetWorkHandler{
     NSDictionary *mydic;
@@ -238,6 +239,95 @@
  return mydic;
  
  }
+
+
+
+-(NSDictionary *)getExhibitor
+{
+    NSString *myexhibitor=@"http://www.mobiledeveloperweekend.net/service/getExhibitors?userName=eng.medhat.cs.h@gmail.com";
+    mydic=[NSDictionary new];
+    NSURL *myurl=[NSURL URLWithString:myexhibitor];
+    NSURLRequest *myrequest=[NSURLRequest requestWithURL:myurl];
+    AFHTTPRequestOperation *myoperation=[[AFHTTPRequestOperation alloc]initWithRequest:myrequest];
+    myoperation.responseSerializer =[AFJSONResponseSerializer serializer];
+    [myoperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *myoperation, id responseObject) {
+        mydic = (NSDictionary *)responseObject;
+        //NSLog([mydic objectForKey: @"status"]);
+        
+        NSMutableArray *arrayOfExhibitors = [mydic objectForKey:@"result"];
+        for (int i=1; i<[arrayOfExhibitors count]; i++ ) {
+            NSMutableDictionary *exhibitorDict = [arrayOfExhibitors objectAtIndex:i];
+            JETSExhibitor *exhibitor=[JETSExhibitor new];
+            
+            [exhibitor setImageURL:[exhibitorDict objectForKey:@"imageURL"]];
+            NSLog([exhibitor imageURL]);
+            
+            [exhibitor setCompanyAddress:[exhibitorDict objectForKey:@"companyAddress"]];
+            NSLog([exhibitor companyAddress]);
+            
+            
+            [exhibitor setCompanyAbout:[exhibitorDict objectForKey:@"companyAbout"]];
+            NSLog([exhibitor companyAbout]);
+            
+            [exhibitor setFax:[exhibitorDict objectForKey:@"fax"]];
+            NSLog([exhibitor fax]);
+            
+            [exhibitor setContactName:[exhibitorDict objectForKey:@"contactName"]];
+            NSLog([exhibitor contactName]);
+            
+            [exhibitor setContactTitle:[exhibitorDict objectForKey:@"contactTitle"]];
+            NSLog([exhibitor contactTitle]);
+            
+            [exhibitor setCompanyUrl:[exhibitorDict objectForKey:@"companyUrl"]];
+            NSLog([exhibitor companyUrl]);
+            
+            [exhibitor setEmail:[exhibitorDict objectForKey:@"email"]];
+            NSLog([exhibitor email]);
+            
+            [exhibitor setCountryName:[exhibitorDict objectForKey:@"countryName"]];
+            NSLog([exhibitor countryName]);
+            
+            [exhibitor setCityName:[exhibitorDict objectForKey:@"cityName"]];
+            NSLog([exhibitor cityName]);
+            
+            [exhibitor setCompanyName:[exhibitorDict objectForKey:@"companyName"]];
+            NSLog([exhibitor companyName]);
+            
+            
+            
+            /*  NSMutableArray *myArrayOPhones = [exhibitorDict objectForKey:@"phones"];
+             for (int b=1; b<[myArrayOPhones count]; b++) {
+             NSMutableDictionary *myphonesDict =[myArrayOPhones objectAtIndex:b];
+             [exhibitor setPhones:[myphonesDict objectForKey:@"phones"]];
+             NSLog(@"my phones are:");
+             NSLog([exhibitor phones]);
+             }*/
+            
+            
+            NSMutableArray *myarrayofmobiles = [exhibitorDict objectForKey:@"mobiles"];
+            for (int m=1; m<[myarrayofmobiles count]; m++) {
+                NSMutableDictionary *mymobilesDict =[myarrayofmobiles objectAtIndex:m];
+                [exhibitor setMobiles:[mymobilesDict objectForKey:@"mobiles"]];
+                NSLog(@"mobiles are:");
+                NSLog([exhibitor mobiles]);
+            }
+            
+            [_exhibitor addObject:exhibitor];
+        }
+        
+        [_netDelegate handle: mydic];
+    }
+     
+     
+     
+failure:^(AFHTTPRequestOperation *myoperation, NSError *error) {
+UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error retreiving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+[alert show];
+    }];
+    
+    [myoperation start];
+    return mydic;
+}
 
 
 
