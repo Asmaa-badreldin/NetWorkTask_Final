@@ -83,7 +83,7 @@
 
 -(NSDictionary *) getSpeakersWithEmail:(NSString *)email{
     //geting url of webservice
-    NSString *mystring = @"http://www.mobiledeveloperweekend.net/service/getSpeakers?userName=eng.medhat.cs.h@gmail.com";
+    NSString *mystring = [NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/getSpeakers?userName=%@",email];
     mydic = [NSDictionary new];
     NSURL *url = [NSURL URLWithString:mystring];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -157,11 +157,11 @@
 
 
 
--(NSDictionary *) getSessions{
- NSString *string = @"http://www.mobiledeveloperweekend.net/service/getSessions?userName=eng.medhat.cs.h@gmail.com";
+-(NSDictionary *) getSessionsWithEmail:(NSString *)email{
+ NSString *mystring = [NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/getSessions?userName=%@",email];
  
  mydic=[NSDictionary new];
- NSURL *url = [NSURL URLWithString:string];
+ NSURL *url = [NSURL URLWithString:mystring];
  NSURLRequest *request = [NSURLRequest requestWithURL:url];
  
  // 2

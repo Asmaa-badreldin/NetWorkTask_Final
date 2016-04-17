@@ -19,6 +19,6 @@
 -(NSDictionary *) getProfileWithName:(NSString *)name andPassword:(NSString *)pass ;
 @property NSMutableArray *profiles;
 
--(NSDictionary *)getSessions;
+-(NSDictionary *)getSessionsWithEmail:(NSString *)email;
 
 @end

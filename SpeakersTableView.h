@@ -14,6 +14,7 @@
 
 @property NSMutableArray *speakers;
 @property NSMutableArray *profiles;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelFN;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *labelImage;

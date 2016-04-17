@@ -32,11 +32,11 @@ UIActivityIndicatorView *activity;
 {
     [super viewDidLoad];
     
-    /*
+    
     // 1- load getSpeakerMethod
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSpeakersWithEmail:@"eng.medhat.cs.h@gmail.com"];
-    */
+    
     
     
    /*
@@ -47,10 +47,12 @@ UIActivityIndicatorView *activity;
     */
     
     
+    
+    /*
     // 3-  load getsession Method
     NetWorkHandler *net=[NetWorkHandler new];
-    mydic = [net getSessions];
-    
+    mydic = [net getSessionsWithEmail:@"eng.medhat.cs.h@gmail.com"];
+    */
     
     
     [self.speakerstable reloadData];
