@@ -16,7 +16,8 @@
 -(NSDictionary *) getSpeakersWithEmail:(NSString *)email;
 @property NSMutableArray *speakers;
 
--(NSDictionary *) getProfileWithName:(NSString *)name andPassword:(NSString *)pass ;
+-(NSDictionary *) loginWithEmail:(NSString *)email andPassword:(NSString *)pass;
+-(NSDictionary *) getProfileWithEmail:(NSString *)email;
 @property NSMutableArray *profiles;
 
 

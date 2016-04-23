@@ -44,21 +44,25 @@ UIActivityIndicatorView *activity;
     // 2- load getProfile Method
     NetWorkHandler *net=[NetWorkHandler new];
     
-    mydic = [net getProfileWithName:@"eng.medhat.cs.h@gmail.com" andPassword:@"medhat123"];
+    mydic = [net getProfileWithEmail:@"eng.medhat.cs.h@gmail.com"];
     */
     
-    
+    // 3- load login Method
+    NetWorkHandler *net=[NetWorkHandler new];
+    mydic = [net loginWithEmail:@"eng.medhat.cs.h@gmail.com"andPassword:@"medhat123"];
     
     /*
-    // 3-  load getsession Method
+    // 4-  load getsession Method
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSessionsWithEmail:@"eng.medhat.cs.h@gmail.com"];
     */
     
-    // 4- load getExhibtors Method
+    
+    /*
+    // 5- load getExhibtors Method
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getExhibitorWithEmail:@"eng.medhat.cs.h@gmail.com"];
-   
+   */
   
 }
 

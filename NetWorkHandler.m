@@ -18,12 +18,46 @@
     NSDictionary *mydic;
 }
 
+-(NSDictionary *) loginWithEmail:(NSString *)email andPassword:(NSString *)pass{
+    
+    NSString *mystring = [NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/login?userName=%@&password=%@",email,pass];
+    
+    mydic = [NSDictionary new];
+    NSURL *url = [NSURL URLWithString:mystring];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    operation.responseSerializer =[AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        mydic= (NSDictionary *)responseObject;
+        NSMutableDictionary *profileDic = [responseObject objectForKey:@"result"];
+        JETSProfile *profile=[JETSProfile new];
+        
+        [profile setFirstName:[profileDic objectForKey:@"firstName"]];
+        NSLog([profile firstName]);
+        [profile setMiddleName:[profileDic objectForKey:@"middleName"]];
+        NSLog([profile middleName]);
+        [profile setLastName:[profileDic objectForKey:@"lastName"]];
+        NSLog([profile lastName]);
+        [profile setEmail:[profileDic objectForKey:@"email"]];
+        NSLog([profile email]);      
+        
+        [_netDelegate handle: mydic];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error retreiving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }];
+    
+    [operation start];
+    return mydic;
+}
 
--(NSDictionary *) getProfileWithName:(NSString *)name andPassword:(NSString *)pass{
+-(NSDictionary *) getProfileWithEmail:(NSString *)email{
     //geting url of webservice
        
-    NSString *mystring = [NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/login?userName=%@&password=%@",name,pass];
-    
+    NSString *mystring = [NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/getAttendeeProfile?userName=%@",email];
     mydic = [NSDictionary new];
     NSURL *url = [NSURL URLWithString:mystring];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -241,7 +275,6 @@
  }
 
 
-
 -(NSDictionary *)getExhibitorWithEmail:(NSString *)email
 {
     NSString *myexhibitor=[NSString stringWithFormat:@"http://www.mobiledeveloperweekend.net/service/getExhibitors?userName=%@",email];
@@ -295,14 +328,14 @@
             
             
             
-            /*  NSMutableArray *myArrayOPhones = [exhibitorDict objectForKey:@"phones"];
+           /*   NSMutableArray *myArrayOPhones = [exhibitorDict objectForKey:@"phones"];
              for (int b=1; b<[myArrayOPhones count]; b++) {
              NSMutableDictionary *myphonesDict =[myArrayOPhones objectAtIndex:b];
              [exhibitor setPhones:[myphonesDict objectForKey:@"phones"]];
              NSLog(@"my phones are:");
              NSLog([exhibitor phones]);
-             }*/
-            
+             }
+            */
             
             NSMutableArray *myarrayofmobiles = [exhibitorDict objectForKey:@"mobiles"];
             for (int m=1; m<[myarrayofmobiles count]; m++) {
