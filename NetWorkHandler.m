@@ -219,7 +219,7 @@
  NSString *dateString=[agendaDict objectForKey:@"date"];
  double getDate=[dateString doubleValue];
  [agenda setDate:getDate];
-     NSLog(@":print long %li",[agenda date]);
+     NSLog(@":print long date %li",[agenda date]);
      
  NSMutableArray *sessions=[NSMutableArray new];
  sessions=[agendaDict objectForKey:@"sessions"];
@@ -238,14 +238,17 @@
  [session setLiked:[[sessionDict objectForKey:@"like"] isEqualToString:@"true"]];
  [session setSessionTags:[sessionDict objectForKey:@"sessionTags"]];
  [session setSpeakers:[sessionDict objectForKey:@"speakers"]];
- dateString=[sessionDict objectForKey:@"startDate"];
- getDate=[dateString doubleValue];
- [session setStartDate:getDate];
-     NSLog(@"print long date%li",[session date]);
- dateString=[sessionDict objectForKey:@"endDate"];
- getDate=[dateString doubleValue];
+     
+  NSString *sdateString=[sessionDict objectForKey:@"startDate"];
+ double getsDate=[sdateString doubleValue];
+ [session setStartDate:getsDate];
+ NSLog(@"print long start date%li",[session date]);
+     
+ NSString *edateString=[sessionDict objectForKey:@"endDate"];
+ double geteDate=[edateString doubleValue];
  [session setEndDate:getDate];
-     NSLog(@"print long date%li",[session date]);
+ NSLog(@"print long end date%li",[session date]);
+     
  [arrayOfSessions addObject:session];
  }
  
