@@ -218,9 +218,8 @@
  JETSAgenda *agenda=[JETSAgenda new];
  NSString *dateString=[agendaDict objectForKey:@"date"];
  double getDate=[dateString doubleValue];
- NSTimeInterval seconds = getDate / 1000;
- NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
- [agenda setDate:date];
+ [agenda setDate:getDate];
+     NSLog(@":print long %li",[agenda date]);
      
  NSMutableArray *sessions=[NSMutableArray new];
  sessions=[agendaDict objectForKey:@"sessions"];
@@ -241,14 +240,12 @@
  [session setSpeakers:[sessionDict objectForKey:@"speakers"]];
  dateString=[sessionDict objectForKey:@"startDate"];
  getDate=[dateString doubleValue];
- seconds = getDate / 1000;
- date = [NSDate dateWithTimeIntervalSince1970:seconds];
- [session setStartDate:date];
+ [session setStartDate:getDate];
+     NSLog(@"print long date%li",[session date]);
  dateString=[sessionDict objectForKey:@"endDate"];
  getDate=[dateString doubleValue];
- seconds = getDate / 1000;
- date = [NSDate dateWithTimeIntervalSince1970:seconds];
- [session setEndDate:date];
+ [session setEndDate:getDate];
+     NSLog(@"print long date%li",[session date]);
  [arrayOfSessions addObject:session];
  }
  

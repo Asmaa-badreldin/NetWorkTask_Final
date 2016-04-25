@@ -47,15 +47,17 @@ UIActivityIndicatorView *activity;
     mydic = [net getProfileWithEmail:@"eng.medhat.cs.h@gmail.com"];
     */
     
+    /*
     // 3- load login Method
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net loginWithEmail:@"eng.medhat.cs.h@gmail.com"andPassword:@"medhat123"];
+    */
     
-    /*
+    
     // 4-  load getsession Method
     NetWorkHandler *net=[NetWorkHandler new];
     mydic = [net getSessionsWithEmail:@"eng.medhat.cs.h@gmail.com"];
-    */
+    
     
     
     /*
